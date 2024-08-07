@@ -1,8 +1,10 @@
 Taken from: https://argo-cd.readthedocs.io/en/stable/getting_started/
 
+STEP 1:
 minikube start
 -- if you have space issue you need to increase in Docker resources. Do not use --force flag on minikube start.
 
+STEP 2:
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
@@ -12,6 +14,7 @@ kubectl get services
 
 brew install argocd
 
+STEP 3:
 -- In a separate tab to be able to open UI and execute commands:
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 
@@ -24,12 +27,14 @@ L3LNqy5YJed2KPFO
 
 -- Let's go to UI and login there and explore app.
 
+STEP 4:
 -- Let's auth in CLI:
 argocd login localhost:8080
 
 -- We need to create an Argo CD App:
 argocd app create guestbook --repo https://github.com/argoproj/argocd-example-apps.git --path guestbook --dest-server https://kubernetes.default.svc --dest-namespace default
 
+STEP 5:
 kubectl config set-context --current --namespace=default
 kubectl get services
 
