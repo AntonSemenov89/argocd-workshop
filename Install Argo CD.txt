@@ -1,10 +1,15 @@
 Taken from: https://argo-cd.readthedocs.io/en/stable/getting_started/
+Vanya Repo link: https://github.com/ivan-kiliakov/kubernetes-workshop
 
 STEP 1:
+minikube delete
 minikube start
 -- if you have space issue you need to increase in Docker resources. Do not use --force flag on minikube start.
 
 STEP 2:
+kubectl get namespaces
+kubectl get services
+
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
@@ -12,9 +17,13 @@ kubectl config set-context --current --namespace=argocd
 
 kubectl get services
 
+-- Install Argo CD CLI
 brew install argocd
 
 STEP 3:
+-- Try to open:
+localhost:8080
+
 -- In a separate tab to be able to open UI and execute commands:
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 
@@ -23,7 +32,7 @@ localhost:8080
 
 -- Get password:
 argocd admin initial-password -n argocd
-L3LNqy5YJed2KPFO
+-- Example: DukowHttC1KssM2t
 
 -- Let's go to UI and login there and explore app.
 
@@ -44,3 +53,7 @@ argocd app sync guestbook
 
 -- Let's expose the app and open in UI
 minikube service guestbook-ui --url
+
+STEP 6:
+-- Clean Up
+minikube delete

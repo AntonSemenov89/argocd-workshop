@@ -1,2 +1,5 @@
 kubectl config get-contexts   
 kubectl config unset current-context
+
+Unable to create application: application spec for Kubernetes Workshop is invalid: InvalidSpecError: Unable to generate manifests in https://github.com/ivan-kiliakov/kubernetes-workshop/tree/main/23.%20Yaml%20config: rpc error: code = Unknown desc = https://github.com/ivan-kiliakov/kubernetes-workshop/tree/main/23.%20Yaml%20config: app path does not exist
+Unable to create application: application spec for Kubernetes Workshop is invalid: InvalidSpecError: Unable to generate manifests in 23.%20Yaml%20config: rpc error: code = Unknown desc = 23.%20Yaml%20config: app path does not exist
