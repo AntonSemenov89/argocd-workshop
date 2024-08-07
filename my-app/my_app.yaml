@@ -5,7 +5,7 @@ metadata:
   labels:
     app: my-yaml-app
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: my-yaml-app

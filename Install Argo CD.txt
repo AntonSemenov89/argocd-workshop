@@ -1,5 +1,6 @@
 Taken from: https://argo-cd.readthedocs.io/en/stable/getting_started/
 Vanya Repo link: https://github.com/ivan-kiliakov/kubernetes-workshop
+My repo: https://github.com/AntonSemenov89/argocd-workshop
 
 STEP 1:
 minikube delete
