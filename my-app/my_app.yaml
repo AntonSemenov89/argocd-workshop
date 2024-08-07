@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: my-yaml-app
-        image: gcr.io/google-samples/kubernetes-bootcamp:v1
+        image: gcr.io/google-samples/kubernetes-bootcamp:v2
 
 ---
 apiVersion: v1
