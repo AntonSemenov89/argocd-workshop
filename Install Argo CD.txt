@@ -33,7 +33,7 @@ localhost:8080
 
 -- Get password:
 argocd admin initial-password -n argocd
--- Example: DukowHttC1KssM2t
+-- Example: i5zXB0Q3yKMJ4jad
 
 -- Let's go to UI and login there and explore app.
 
@@ -54,6 +54,11 @@ argocd app sync guestbook
 
 -- Let's expose the app and open in UI
 minikube service guestbook-ui --url
+
+PERSONAL TASKS:
+1. Delete the app via UI and recreate it via UI.
+2. Create the app with yaml from prev workshop. Secret: it is here in my-app folder. Tshh ...
+- Let's try together to change manifests.
 
 STEP 6:
 -- Clean Up
