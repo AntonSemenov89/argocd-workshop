@@ -1,0 +1,38 @@
+kubectl config get-contexts   
+kubectl config unset current-context
+
+minikube start --force (NO FORCE)
+
+https://argo-cd.readthedocs.io/en/stable/getting_started/
+
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+kubectl config set-context --current --namespace=argocd
+
+kubectl get services
+
+We need to open the port (there are different ways):
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+// TODO: Configure TLS
+
+Get password:
+argocd admin initial-password -n argocd
+L3LNqy5YJed2KPFO
+
+argocd login localhost:8080
+
+5. Register A Cluster To Deploy Apps To (Optional)¶
+Skipped
+
+argocd app create guestbook --repo https://github.com/argoproj/argocd-example-apps.git --path guestbook --dest-server https://kubernetes.default.svc --dest-namespace default
+
+
+argocd app get guestbook
+argocd app sync guestbook
+
+kubectl config set-context minikube
+kubectl config set-context --current --namespace=default
+
+kubectl port-forward svc/aguestbook-ui -n=default 8081:80
+minikube service guestbook-ui --url

@@ -1,0 +1,12 @@
+STEP 1:
+-- Remove old Kubernetes
+minikube delete
+
+-- If you have space issue you need to increase in Docker resources. Do not use --force flag on minikube start.
+minikube start
+
+-- Check Kubernetes installation
+kubectl get namespaces
+kubectl get services
+
+
